@@ -18,9 +18,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ContainerRestTest {
 	
+	//autowire is the same as resource but use resource
 	@Resource
 	private TestRestTemplate restTemplate;
 	
+	
+	//verify that the http request returns something
+	//knowing you're wired properly and MVC is running 
 	@Test
 	public void exampleTest() {
 		ResponseEntity<String> response = restTemplate.getForEntity("/products", String.class);
