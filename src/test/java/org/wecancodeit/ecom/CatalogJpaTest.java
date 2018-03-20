@@ -20,7 +20,7 @@ public class CatalogJpaTest {
 	
 	
 	@Test
-	public void shouldFoo() {
+	public void shouldInitializeProductRepository() {
 	
 	}
 }
