@@ -3,13 +3,15 @@ xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4 && xhr.status === 200) {
 		const res = JSON.parse(xhr.responseText);
 		const productsContainer = document.querySelector('#products-container')
-		console.log(res)
+		/*console.log(res)*/
 	
 	for (product in res){
 		const productContainer = document.createElement('div')
-		productContainer.innerText = product.name
-
-		productsContainer.append(productContainer)
+		const productLink = document.createElement('a')
+		productLink.setAttribute('href', '/catalog/product.html');
+		productLink.innerText = res[product].name
+		productContainer.appendChild(productLink)
+		productsContainer.appendChild(productContainer)
 	}
 	}
 }
