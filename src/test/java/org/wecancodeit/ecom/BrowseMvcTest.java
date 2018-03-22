@@ -16,8 +16,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
-public class CatalogMvcTest {
+//adding controller class will only initialize that controller to make it smaller in scope
+@WebMvcTest(BrowseController.class)
+public class BrowseMvcTest {
 
 	@Resource
 	private MockMvc mvc;
